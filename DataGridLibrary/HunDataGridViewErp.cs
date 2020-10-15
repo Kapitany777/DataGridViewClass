@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,8 +15,11 @@ namespace DataGridLibrary
         {
             this.CellEnter += DataGridViewEditable_CellEnter;
             this.CellValidating += DataGridViewEditable_CellValidating;
+            this.CellValidated += HunDataGridViewErp_CellValidated;
 
             this.EditingControlShowing += DataGridViewEditable_EditingControlShowing;
+
+            this.CellMouseDown += HunDataGridViewErp_CellMouseDown;
         }
         #endregion
 
@@ -58,6 +62,14 @@ namespace DataGridLibrary
                 }
             }
             catch { }
+        }
+
+        private void HunDataGridViewErp_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.Columns[e.ColumnIndex] is HunColumnErp)
+            {
+                this.CurrentCell.Value = this.CurrentCell.Value?.ToString().Trim();
+            }
         }
 
         public void NewRow()
@@ -103,6 +115,11 @@ namespace DataGridLibrary
                 SendKeys.Send("{tab}");
                 return true;
             }
+            else if (keyData == Keys.F2)
+            {
+                MessageBox.Show("F2 key pressed");
+                return true;
+            }
             else if (keyData == Keys.F9)
             {
                 NewRow();
@@ -145,6 +162,16 @@ namespace DataGridLibrary
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void HunDataGridViewErp_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && this.Columns[e.ColumnIndex] is HunColumnErp)
+            {
+                MessageBox.Show("Right mouse button pressed");
+
+                this.Focus();
             }
         }
     }
