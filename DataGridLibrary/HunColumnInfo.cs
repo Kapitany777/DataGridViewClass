@@ -10,7 +10,7 @@ namespace DataGridLibrary
     /// <summary>
     /// DataGridView TextBoxColumn read only column class for information
     /// </summary>
-    public class HunColumnInfo : HunColumnBase
+    public class HunColumnInfo : DataGridViewTextBoxColumn
     {
         public HunColumnInfo()
         {
