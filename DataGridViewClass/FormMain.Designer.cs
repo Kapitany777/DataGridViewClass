@@ -64,6 +64,7 @@
             this.StoreCode.HeaderText = "Store code";
             this.StoreCode.MaxInputLength = 4;
             this.StoreCode.Name = "StoreCode";
+            this.StoreCode.Required = true;
             // 
             // StoreName
             // 
@@ -80,6 +81,7 @@
             this.CustomerCode.HeaderText = "Customer code";
             this.CustomerCode.MaxInputLength = 8;
             this.CustomerCode.Name = "CustomerCode";
+            this.CustomerCode.Required = true;
             // 
             // CustomerName
             // 
