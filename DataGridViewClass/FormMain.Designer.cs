@@ -60,7 +60,9 @@
             // 
             // StoreCode
             // 
+            this.StoreCode.DescriptionColumn = null;
             this.StoreCode.HeaderText = "Store code";
+            this.StoreCode.MaxInputLength = 4;
             this.StoreCode.Name = "StoreCode";
             // 
             // StoreName
@@ -74,7 +76,9 @@
             // 
             // CustomerCode
             // 
+            this.CustomerCode.DescriptionColumn = null;
             this.CustomerCode.HeaderText = "Customer code";
+            this.CustomerCode.MaxInputLength = 8;
             this.CustomerCode.Name = "CustomerCode";
             // 
             // CustomerName

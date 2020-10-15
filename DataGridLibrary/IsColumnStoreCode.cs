@@ -16,6 +16,8 @@ namespace DataGridLibrary
         public IsColumnStoreCode()
         {
             this.ErrorMessage = "Invalid store code!";
+
+            this.MaxInputLength = 4;
         }
         #endregion
 

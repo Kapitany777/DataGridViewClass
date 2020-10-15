@@ -15,6 +15,8 @@ namespace DataGridLibrary
         public IsColumnCustomerCode()
         {
             this.ErrorMessage = "Invalid customer code!";
+
+            this.MaxInputLength = 8;
         }
         #endregion
 
