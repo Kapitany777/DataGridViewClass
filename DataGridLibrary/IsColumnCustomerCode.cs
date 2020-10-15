@@ -17,6 +17,7 @@ namespace DataGridLibrary
             this.ErrorMessage = "Invalid customer code!";
 
             this.MaxInputLength = 8;
+            this.EnabledChars = "0123456789";
         }
         #endregion
 

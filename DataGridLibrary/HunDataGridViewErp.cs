@@ -150,16 +150,36 @@ namespace DataGridLibrary
         {
             // Prevent multiple subscribing
             e.Control.KeyPress -= Integer_KeyPress;
+            e.Control.KeyPress -= Erp_KeyPress;
 
             if (this.Columns[this.CurrentCell.ColumnIndex] is HunColumnInteger)
             {
                 e.Control.KeyPress += Integer_KeyPress;
+            }
+            else if (this.Columns[this.CurrentCell.ColumnIndex] is HunColumnErp)
+            {
+                e.Control.KeyPress += Erp_KeyPress;
             }
         }
 
         private void Integer_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Erp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            HunColumnErp column = this.Columns[this.CurrentCell.ColumnIndex] as HunColumnErp;
+
+            if (string.IsNullOrEmpty(column.EnabledChars))
+            {
+                return;
+            }
+
+            if (!column.EnabledChars.Contains(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }

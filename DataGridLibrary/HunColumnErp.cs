@@ -18,6 +18,17 @@ namespace DataGridLibrary
 
         [Browsable(false)]
         public HunColumnInfo DescriptionColumn { get; set; }
+
+        [Browsable(false)]
+        public string EnabledChars { get; protected set; }
+        #endregion
+
+        #region Constructors
+        public HunColumnErp()
+        {
+            this.ErrorMessage = string.Empty;
+            this.EnabledChars = string.Empty;
+        }
         #endregion
 
         public bool CheckValue(string value)
