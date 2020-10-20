@@ -71,5 +71,15 @@ namespace DataGridViewClass
         {
             textBoxValues.Text = GetGridValues();
         }
+
+        private void buttonCheckRequired_Click(object sender, EventArgs e)
+        {
+            string columnHeaderText;
+
+            if (!dataGridViewEditableTest.CheckRequired(out columnHeaderText))
+            {
+                MessageBox.Show($"The {columnHeaderText} column is required!");
+            }
+        }
     }
 }

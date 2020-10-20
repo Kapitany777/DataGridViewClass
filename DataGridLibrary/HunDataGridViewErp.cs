@@ -194,5 +194,41 @@ namespace DataGridLibrary
                 this.Focus();
             }
         }
+
+        public bool CheckRequired(out string columnHeaderText)
+        {
+            columnHeaderText = string.Empty;
+
+            foreach (DataGridViewRow row in this.Rows)
+            {
+                bool hasValue = false;
+                bool existsEmptyCell = false;
+
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (!(cell.OwningColumn is HunColumnBase)) continue;
+
+                    HunColumnBase column = cell.OwningColumn as HunColumnBase;
+
+                    if (!string.IsNullOrEmpty(cell.Value?.ToString()))
+                    {
+                        hasValue = true;
+                    }
+
+                    if (column.Required && string.IsNullOrEmpty(cell.Value?.ToString()) && !existsEmptyCell)
+                    {
+                        columnHeaderText = column.HeaderText;
+                        existsEmptyCell = true;
+                    }
+                }
+
+                if (hasValue && existsEmptyCell)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }

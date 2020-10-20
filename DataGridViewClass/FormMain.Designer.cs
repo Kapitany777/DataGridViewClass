@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewEditableTest = new DataGridLibrary.HunDataGridViewErp();
             this.StoreCode = new DataGridLibrary.IsColumnStoreCode();
             this.StoreName = new DataGridLibrary.HunColumnInfo();
@@ -41,13 +41,14 @@
             this.textBoxDataPropertyList = new System.Windows.Forms.TextBox();
             this.buttonGetValues = new System.Windows.Forms.Button();
             this.textBoxValues = new System.Windows.Forms.TextBox();
+            this.buttonCheckRequired = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEditableTest)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewEditableTest
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridViewEditableTest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridViewEditableTest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewEditableTest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewEditableTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -73,8 +74,8 @@
             // 
             // StoreName
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.StoreName.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.StoreName.DefaultCellStyle = dataGridViewCellStyle2;
             this.StoreName.HeaderText = "Store name";
             this.StoreName.Name = "StoreName";
             this.StoreName.ReadOnly = true;
@@ -98,9 +99,9 @@
             // IntegerQuantity
             // 
             this.IntegerQuantity.DataPropertyName = "quantity";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N0";
-            this.IntegerQuantity.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N0";
+            this.IntegerQuantity.DefaultCellStyle = dataGridViewCellStyle3;
             this.IntegerQuantity.HeaderText = "Integer quantity";
             this.IntegerQuantity.Name = "IntegerQuantity";
             // 
@@ -140,11 +141,22 @@
             this.textBoxValues.Size = new System.Drawing.Size(552, 148);
             this.textBoxValues.TabIndex = 4;
             // 
+            // buttonCheckRequired
+            // 
+            this.buttonCheckRequired.Location = new System.Drawing.Point(784, 376);
+            this.buttonCheckRequired.Name = "buttonCheckRequired";
+            this.buttonCheckRequired.Size = new System.Drawing.Size(156, 48);
+            this.buttonCheckRequired.TabIndex = 5;
+            this.buttonCheckRequired.Text = "Check required values";
+            this.buttonCheckRequired.UseVisualStyleBackColor = true;
+            this.buttonCheckRequired.Click += new System.EventHandler(this.buttonCheckRequired_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 595);
+            this.ClientSize = new System.Drawing.Size(1086, 738);
+            this.Controls.Add(this.buttonCheckRequired);
             this.Controls.Add(this.textBoxValues);
             this.Controls.Add(this.buttonGetValues);
             this.Controls.Add(this.textBoxDataPropertyList);
@@ -171,6 +183,7 @@
         private System.Windows.Forms.TextBox textBoxDataPropertyList;
         private System.Windows.Forms.Button buttonGetValues;
         private System.Windows.Forms.TextBox textBoxValues;
+        private System.Windows.Forms.Button buttonCheckRequired;
     }
 }
 
